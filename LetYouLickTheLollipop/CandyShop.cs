@@ -28,5 +28,28 @@ namespace LetYouLickTheLollipop
                               Storage[0], Storage[1], Income, SugarAmount);
         }
 
+        public void SellCandy(int amount)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+				Storage[0]--;
+				Income += Candy.Price;
+            }
+        }
+
+		public void SellLollipop(int amount)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+				Storage[1]--;
+				Income += Lollipop.Price;
+            }
+		}
+
+        public void BuySugar(int amount)
+        {
+            SugarAmount += amount;
+            Income -= amount / 10;
+        }
     }
 }
