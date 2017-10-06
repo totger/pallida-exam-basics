@@ -32,8 +32,8 @@ The application is accepted if:
 
 ###  What is the difference between a function and a method? [2p]
 #### Your answer:
-[add your answer here]
+In c# there are no functions declared outside classes, so basically all functions are methods.
 
 ### What is the constructor? When it is used? [2p]
 #### Your answer:
-[add your answer here]
+Constructors are class methods that are executed when an object of a class is created.
