@@ -1,14 +1,15 @@
 ﻿using System;
 namespace LetYouLickTheLollipop
 {
-    public class Candy : CandyShop
+    public class Candy 
     {
         public static int SugarToMake = 10;
         public static int Price = 20;
 
-        public Candy()
+        public Candy(CandyShop candyShop)
         {
-            
+            candyShop.SugarAmount -= SugarToMake;
+            candyShop.Storage[0]++;
         }
     }
 }

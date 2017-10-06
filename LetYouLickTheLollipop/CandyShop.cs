@@ -12,9 +12,21 @@ namespace LetYouLickTheLollipop
             SugarAmount = sugar;
         }
 
-        public void CreateSweets()
+        public void CreateSweetsCandy(CandyShop candyShop)
         {
-            
+            Candy candy = new Candy(candyShop);
         }
+
+		public void CreateSweetsLollipop(CandyShop candyShop)
+		{
+            Lollipop lollipop = new Lollipop(candyShop);
+		}
+
+        public void PrintInfo()
+        {
+            Console.WriteLine("Inventory: {0} candies, {1} lollipops, Income: {2}$ Sugar: {3}gr",
+                              Storage[0], Storage[1], Income, SugarAmount);
+        }
+
     }
 }
