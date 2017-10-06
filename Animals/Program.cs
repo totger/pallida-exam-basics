@@ -11,14 +11,15 @@ namespace Animals
         {
             string path = @"../../favourites.txt";
 
-            if (args == null)
+            if (args.Length == 0)
             {
-                Console.WriteLine("C# favourite animals: ");
+                List<string> animals = File.ReadAllLines(path).ToList();
+                string oneLine = string.Join(", ", animals);
+                Console.WriteLine("C# favourite animals: {0}", oneLine);
             }
             else
             {
                 List<string> animals = File.ReadAllLines(path).ToList();
-
                 foreach (string argument in args)
                 {
                     if (!animals.Contains(argument))
