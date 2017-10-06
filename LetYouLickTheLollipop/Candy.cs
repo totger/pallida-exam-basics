@@ -11,5 +11,10 @@ namespace LetYouLickTheLollipop
             candyShop.SugarAmount -= SugarToMake;
             candyShop.Storage[0]++;
         }
+
+        public void Raise(int percent)
+        {
+            Price += Price * percent / 100;
+        }
     }
 }
