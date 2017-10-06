@@ -12,12 +12,27 @@ namespace UniqueCharacters
         }
         public static List<char> UniqueChars(string input)
         {
-            List<char> characters = new List<char>();
+            List<char> returnList = new List<char>();
+            Dictionary<char, int> characters = new Dictionary<char, int>();
             for (int i = 0; i < input.Length; i++)
             {
-                characters.Add(input[i]);
+                if (characters.ContainsKey(input[i]))
+                {
+                    characters[input[i]]++;
+                }
+                else
+                {
+                    characters.Add(input[i], 1);
+                }
             }
-            List<char> returnList = new List<char>();
+            foreach (var item in characters)
+            {
+                if (item.Value == 1)
+                {
+                    returnList.Add(item.Key);
+                }
+            }
+            return returnList;
         }
     }
 }
